@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Notation.Domain.Core.Enums
 {
-    public enum TypeNote
+    public enum NoteType
     {
         Note,
         TODO,
