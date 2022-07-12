@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Notation.Domain.Core.Enums;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -11,8 +12,8 @@ namespace Notation.Domain.Core.Models
         public string Text { get; set; }
         public int CategoryId { get; set; }
         public int AuthorId { get; set; }
-        public int TypeNoteId { get; set; }
-        public int StatusId { get; set; }
+        public TypeNote TypeNote { get; set; }
+        public Status Status { get; set; }
         public DateTime TimeCreate { get; set; }
     }
 }

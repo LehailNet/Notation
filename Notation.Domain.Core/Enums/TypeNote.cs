@@ -4,7 +4,10 @@ using System.Text;
 
 namespace Notation.Domain.Core.Enums
 {
-    internal class TypeNote
+    public enum TypeNote
     {
+        Note,
+        TODO,
+        Reminder
     }
 }

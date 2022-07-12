@@ -1,9 +1,8 @@
-﻿using Notation.Domain.Core.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Notation.Domain.Core.Authors
+namespace Notation.Domain.Core.Models
 {
     public class Author
     {

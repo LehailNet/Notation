@@ -4,7 +4,10 @@ using System.Text;
 
 namespace Notation.Domain.Core.Enums
 {
-    internal class Status
+    public enum Status
     {
+        None,
+        Done,
+        Undone
     }
 }
