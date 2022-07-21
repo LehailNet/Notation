@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace Notation.Infrastructure.Data
@@ -15,15 +15,17 @@ namespace Notation.Infrastructure.Data
             _connectionString = connectionString;
         }
 
-        public IMongoDatabase GetMongoDB ()
+        public IMongoDatabase GetMongoDatabase()
         {
             if (database != null)
+            {
                 return database;
+            }
 
-            client = new MongoClient (_connectionString);
+            client = new MongoClient(_connectionString);
             database = client.GetDatabase("notation");
-
             return database;
         }
+
     }
 }
