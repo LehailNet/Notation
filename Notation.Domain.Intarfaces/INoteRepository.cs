@@ -6,14 +6,15 @@ namespace Notation.Domain.Intarfaces
 {
     public interface INoteRepository
     {
-        Task CreateNote(Note note);
+        Task CreateNoteAsync(Note note);
 
         Note GetNote(int id);
 
-        void UpdateNote(Note note);
+        Task UpdateNoteAsync(Note note);
 
-        void DeleteNote(int id);
+        Task DeleteNoteAsync(int id);
 
         IEnumerable<Note> GetNotes();
+
     }
 }

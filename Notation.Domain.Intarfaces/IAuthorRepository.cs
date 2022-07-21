@@ -8,14 +8,13 @@ namespace Notation.Domain.Intarfaces
 {
     public interface IAuthorRepository
     {
-        Task CreateAuthor(Author author);
+        Task CreateAuthorAsync(Author author);
 
         Author GetAuthor(int id);
 
-        void UpdateAuthor(Author author);
+        Task UpdateAuthorAsync(Author author);
 
-        void DeleteAuthor(int id);
+        Task DeleteAuthorAsync(int id);
 
-        IEnumerable<Author> GetAuthors();
     }
 }
