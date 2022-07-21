@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Notation.Domain.Intarfaces
 {
-    internal interface IAuthorRepository
+    public interface IAuthorRepository
     {
         Task CreateAuthor(Author author);
 

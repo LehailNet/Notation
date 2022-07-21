@@ -1,20 +1,20 @@
 ﻿using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
-using System;
 
 namespace Notation.Infrastructure.Data
 {
     public class DbContext
     {
-        private MongoClient _client;
         private IConfiguration _configuration;
+        private MongoClient _client;
+        private IMongoDatabase _database;
 
         public DbContext(IConfiguration configuration)
         {
             _configuration = configuration;
         }
 
-        public MongoClient GetClient ()
+        public MongoClient GetMongoClient ()
         {
             if (_client != null)
                 return _client;

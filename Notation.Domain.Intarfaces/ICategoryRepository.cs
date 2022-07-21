@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Notation.Domain.Intarfaces
 {
-    internal interface ICategoryRepository
+    public interface ICategoryRepository
     {
         Task CreateCategory(Category category);
 
