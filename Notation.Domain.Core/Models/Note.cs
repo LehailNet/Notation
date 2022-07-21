@@ -1,11 +1,12 @@
-﻿using Notation.Domain.Core.Enums;
+﻿using MongoDB.Bson;
+using Notation.Domain.Core.Enums;
 using System;
 
 namespace Notation.Domain.Core.Models
 {
     public class Note
     {
-        public int Id { get; set; }
+        public ObjectId Id { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
         public int CategoryId { get; set; }
