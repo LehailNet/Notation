@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using Notation.Domain.Core.Models;
@@ -23,30 +21,28 @@ namespace Notation.Infrastructure.Data.Repositories
             .GetMongoDatabase()
             .GetCollection<Note>("note");
 
-        public async Task CreateNote(Note note)
-        {
+        public async Task CreateNoteAsync(Note note) =>
             await GetMongoCollection
-                .InsertOneAsync(note);
+            .InsertOneAsync(note);
+
+        public async Task DeleteNoteAsync(int id) =>
+            await GetMongoCollection.DeleteOneAsync(note => note.Id == id);
+
+        public async Task<Note> GetNote(int id)
+        {
+            return await GetMongoCollection
+            .Find(note => note.Id == id).FirstOrDefaultAsync();
         }
 
-        public void DeleteNote(int id)
+        public async Task<IEnumerable<Note>> GetNotes()
         {
-            throw new NotImplementedException();
+            return await GetMongoCollection
+            .Find(Builders<Note>.Filter.Empty).ToListAsync();
         }
 
-        public Note GetNote(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task UpdateNoteAsync(Note note) =>
+            await GetMongoCollection
+            .ReplaceOneAsync(n => n.Id == note.Id, note);
 
-        public IEnumerable<Note> GetNotes()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateNote(Note note)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

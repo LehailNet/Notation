@@ -8,13 +8,13 @@ namespace Notation.Domain.Intarfaces
     {
         Task CreateNoteAsync(Note note);
 
-        Note GetNote(int id);
+        Task<Note> GetNote(int id);
 
         Task UpdateNoteAsync(Note note);
 
         Task DeleteNoteAsync(int id);
 
-        IEnumerable<Note> GetNotes();
+        Task<IEnumerable<Note>> GetNotes();
 
     }
 }

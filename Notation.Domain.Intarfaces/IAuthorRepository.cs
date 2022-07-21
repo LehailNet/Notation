@@ -10,11 +10,13 @@ namespace Notation.Domain.Intarfaces
     {
         Task CreateAuthorAsync(Author author);
 
-        Author GetAuthor(int id);
+        Task<Author> GetAuthor(int id);
 
         Task UpdateAuthorAsync(Author author);
 
         Task DeleteAuthorAsync(int id);
+
+        Task<IEnumerable<Author>> GetAuthors();
 
     }
 }

@@ -10,13 +10,13 @@ namespace Notation.Domain.Intarfaces
     {
         Task CreateCategoryAsync(Category category);
 
-        Category GetCategory(int id);
+        Task<Category> GetCategory(int id);
 
         Task UpdateCategoryAsync(Category category);
 
         Task DeleteCategoryAsync(int id);
 
-        IEnumerable<Category> GetCategories();
+        Task<IEnumerable<Category>> GetCategories();
 
     }
 }
