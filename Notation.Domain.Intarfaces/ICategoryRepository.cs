@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace Notation.Domain.Intarfaces
 {
-    internal interface ICategoryRepository
+    public interface ICategoryRepository
     {
-        Task CreateCategory(Category category);
+        Task CreateCategoryAsync(Category category);
 
-        Category GetCategory(int id);
+        Task<Category> GetCategory(int id);
 
-        void UpdateCategory(Category category);
+        Task UpdateCategoryAsync(Category category);
 
-        void DeleteCategory(int id);
+        Task DeleteCategoryAsync(int id);
 
-        IEnumerable<Category> GetCategories();
+        Task<IEnumerable<Category>> GetCategories();
+
     }
 }

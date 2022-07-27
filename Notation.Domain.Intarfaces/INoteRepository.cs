@@ -1,21 +1,20 @@
 ﻿using Notation.Domain.Core.Models;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Notation.Domain.Intarfaces
 {
-    internal interface INoteRepository
+    public interface INoteRepository
     {
-        Task CreateNote(Note note);
+        Task CreateNoteAsync(Note note);
 
-        Note GetNote(int id);
+        Task<Note> GetNote(int id);
 
-        void UpdateNote(Note note);
+        Task UpdateNoteAsync(Note note);
 
-        void DeleteNote(int id);
+        Task DeleteNoteAsync(int id);
 
-        IEnumerable<Note> GetNotes();
+        Task<IEnumerable<Note>> GetNotes();
+
     }
 }

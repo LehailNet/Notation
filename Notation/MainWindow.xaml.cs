@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Notation.Infrastructure.Data;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +22,14 @@ namespace Notation
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string connetctionString;
+        private MongoDbContext db;
+
         public MainWindow()
         {
             InitializeComponent();
+            connetctionString = ConfigurationManager.ConnectionStrings["MongoDb"].ConnectionString;
+            db = new MongoDbContext(connetctionString);
         }
     }
 }
