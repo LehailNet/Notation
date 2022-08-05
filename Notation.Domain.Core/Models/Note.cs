@@ -1,5 +1,4 @@
-﻿using MongoDB.Bson;
-using Notation.Domain.Core.Enums;
+﻿using Notation.Domain.Core.Enums;
 using System;
 
 namespace Notation.Domain.Core.Models

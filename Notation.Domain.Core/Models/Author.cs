@@ -1,5 +1,4 @@
-﻿using MongoDB.Bson;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Notation.Domain.Core.Models
 {
