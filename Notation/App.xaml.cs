@@ -16,7 +16,6 @@ namespace Notation
 
         public IConfiguration Configuration { get; private set; }
 
-
         protected override void OnStartup(StartupEventArgs e)
         {
             var builder = new ConfigurationBuilder()
@@ -30,19 +29,15 @@ namespace Notation
 
             ServiceProvider = serviceCollection.BuildServiceProvider();
 
-            var mainWindow = ServiceProvider.GetRequiredService<MainWindow>(); //exception
+            var mainWindow = ServiceProvider.GetRequiredService<MainWindow>(); 
             mainWindow.Show();
         }
 
         private void ConfigureServices(IServiceCollection services)
         {
-
-            services.Configure<AppSettings>(Configuration.GetSection(nameof(AppSettings)));
+            services.Configure<MongoDbConfiguration>(Configuration.GetSection(MongoDbConfiguration.SectionName));
 
             services.AddTransient(typeof(MainWindow));
-
         }
-
-
     }
 }

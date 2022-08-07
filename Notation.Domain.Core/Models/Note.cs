@@ -1,11 +1,11 @@
 ﻿using Notation.Domain.Core.Enums;
+using Notation.Domain.Core.Models.Base;
 using System;
 
 namespace Notation.Domain.Core.Models
 {
-    public class Note
+    public class Note : BaseEntity
     {
-        public int Id { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
         public int CategoryId { get; set; }

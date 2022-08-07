@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Notation.Domain.Core.Models.Base;
+using System.Collections.Generic;
 
 namespace Notation.Domain.Core.Models
 {
-    public class Author
+    public class Author : BaseEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public List<Note> Notes { get; set; }
     }
