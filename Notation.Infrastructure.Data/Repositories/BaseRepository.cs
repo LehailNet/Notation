@@ -6,7 +6,7 @@ using Notation.Domain.Intarfaces;
 
 namespace Notation.Infrastructure.Data.Repositories
 {
-    public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
+    public abstract class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
     {
         private readonly IMongoCollection<T> collection;
 
