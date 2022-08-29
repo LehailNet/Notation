@@ -6,5 +6,6 @@ namespace Notation.Services.Interfaces
     public interface INoteServices
     {
         Task CreateNoteAsync(Note note);
+        Task DeleteNoteAsync(Note note);
     }
 }

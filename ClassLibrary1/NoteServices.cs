@@ -3,6 +3,7 @@ using Notation.Domain.Intarfaces;
 using Notation.Services.Interfaces;
 using System.Threading;
 using System.Threading.Tasks;
+using System;
 
 namespace ClassLibrary1
 {
@@ -19,7 +20,15 @@ namespace ClassLibrary1
         public async Task CreateNoteAsync(Note note)
         {
             Thread.Sleep(4000);
+
+            note.TimeCreate = DateTime.Now;
+
             await _repository.CreateAsync(note);
+        }
+
+        public async Task DeleteNoteAsync(Note note)
+        {
+            await _repository.DeleteAsync(note.Id);
         }
     }
 }
