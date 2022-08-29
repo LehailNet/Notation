@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Notation.Domain.Core\Notation.Domain.Core.csproj" />
+    <ProjectReference Include="..\Notation.Domain.Intarfaces\Notation.Domain.Intarfaces.csproj" />
+  </ItemGroup>
+
+</Project>
